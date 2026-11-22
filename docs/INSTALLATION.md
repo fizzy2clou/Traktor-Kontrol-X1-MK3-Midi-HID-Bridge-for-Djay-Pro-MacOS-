@@ -1,6 +1,6 @@
 # Installation — X1 × djay Bridge v1.1
 
-**The compiled distribution ZIP is not available on GitHub yet.** These instructions apply once the maintainer uploads the release asset.
+**[Download the published v1.1 macOS ZIP](https://github.com/fizzy2clou/Traktor-Kontrol-X1-MK3-Midi-HID-Bridge-for-Djay-Pro-MacOS-/releases/download/v1.1/X1_djay_Bridge_v1.1_Distribution.zip)** from the [v1.1 pre-release](https://github.com/fizzy2clou/Traktor-Kontrol-X1-MK3-Midi-HID-Bridge-for-Djay-Pro-MacOS-/releases/tag/v1.1).
 
 ## Requirements
 - Apple Silicon Mac
