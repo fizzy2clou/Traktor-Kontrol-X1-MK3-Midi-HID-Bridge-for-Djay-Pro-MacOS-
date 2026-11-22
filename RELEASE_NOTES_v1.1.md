@@ -1,6 +1,8 @@
 # X1 × djay Bridge v1.1 — Release Notes
 
-**Status:** Packaging complete; GitHub Release asset upload pending.
+**Status:** v1.1 pre-release published, with downloadable Apple Silicon macOS distribution ZIP.
+
+**[Download v1.1 ZIP](https://github.com/fizzy2clou/Traktor-Kontrol-X1-MK3-Midi-HID-Bridge-for-Djay-Pro-MacOS-/releases/download/v1.1/X1_djay_Bridge_v1.1_Distribution.zip)** · [Release page](https://github.com/fizzy2clou/Traktor-Kontrol-X1-MK3-Midi-HID-Bridge-for-Djay-Pro-MacOS-/releases/tag/v1.1)
 
 ## Included in distribution archive
 
@@ -30,4 +32,4 @@ SHA-256:
 ## Release checklist
 Before advertising the release as stable, test installation and operation on another Apple Silicon Mac, and review third-party logo/dependency redistribution rights. This binary is ad-hoc signed and not notarized by Apple.
 
-The downloadable archive is **not yet attached to a GitHub Release**. The release maintainer must create a `v1.1` GitHub Release and upload the distribution ZIP as a release asset.
+The downloadable ZIP is attached to the **published v1.1 pre-release**. Install it using the bundled `INSTALL.command` and select the bundled **X1 MK3 Bridge Two Banks** mapping in djay Pro.
