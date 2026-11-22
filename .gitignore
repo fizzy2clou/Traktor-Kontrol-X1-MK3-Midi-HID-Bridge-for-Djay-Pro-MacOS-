@@ -1,0 +1,8 @@
+.DS_Store
+target/
+*.log
+*.bak
+*.backup
+*.before_*
+**/.swiftpm/
+.DS_Store?
