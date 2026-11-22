@@ -10,7 +10,9 @@
 
 ## Download
 
-**The v1.1 app archive has not been uploaded yet.** When available, download it from [GitHub Releases](../../releases). The release archive must be generated from the tested app on the maintainer's Mac.
+**[Download X1 × djay Bridge v1.1 for macOS](https://github.com/fizzy2clou/Traktor-Kontrol-X1-MK3-Midi-HID-Bridge-for-Djay-Pro-MacOS-/releases/download/v1.1/X1_djay_Bridge_v1.1_Distribution.zip)** (Apple Silicon, ZIP, 5.2 MB). The [v1.1 GitHub Release](../../releases/tag/v1.1) includes the application, installer, and the **X1 MK3 Bridge Two Banks** djay MIDI mapping.
+
+This is an initial **pre-release**. Apple notarization and wider Mac compatibility testing are pending.
 
 ## Features
 
@@ -31,8 +33,6 @@
 - macOS Accessibility permission for track and loop information
 
 ## Installation
-
-Once the distribution ZIP is published:
 
 1. Download and extract `X1_djay_Bridge_v1.1_Distribution.zip` from [Releases](../../releases).
 2. In Terminal, navigate to the extracted `X1 djay Bridge v1.1` folder and run `bash INSTALL.command`.
@@ -60,7 +60,7 @@ This first release is not Developer ID notarized; macOS may request explicit fir
 
 ## Source and licensing
 
-This repository initially contains documentation only. The tested Rust source tree and packaged macOS app have **not** yet been uploaded. A license has not been selected, so no open-source reuse rights are granted by default. Review third-party dependencies, branding, and redistribution rights before publishing binaries/source.
+This repository initially contains documentation only. The tested Rust source tree has **not** yet been uploaded. The packaged macOS application **is available in the v1.1 GitHub Release**. A license has not been selected, so no open-source reuse rights are granted by default. Review third-party dependencies, branding, and redistribution rights before publishing binaries/source.
 
 ## Documentation
 
