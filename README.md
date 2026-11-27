@@ -2,69 +2,71 @@
 
 **A macOS menu-bar HID-to-MIDI bridge for the Native Instruments Traktor Kontrol X1 MK3 and djay Pro.**
 
-**Version:** 1.1  
-**Platform:** Apple Silicon macOS (other architectures unverified)  
-**Status:** Community release candidate.
+**Current tested version:** v1.2 (stable on the development X1 MK3 setup)  
+**Latest public download:** v1.1 (Apple Silicon macOS pre-release)  
+**Platform:** Apple Silicon macOS; other architectures not verified.
 
 > Independent community project. Not affiliated with or endorsed by Native Instruments or Algoriddim.
 
-## Download
+## Download and version status
 
-**[Download X1 × djay Bridge v1.1 for macOS](https://github.com/fizzy2clou/Traktor-Kontrol-X1-MK3-Midi-HID-Bridge-for-Djay-Pro-MacOS-/releases/download/v1.1/X1_djay_Bridge_v1.1_Distribution.zip)** (Apple Silicon, ZIP, 5.2 MB). The [v1.1 GitHub Release](../../releases/tag/v1.1) includes the application, installer, and the **X1 MK3 Bridge Two Banks** djay MIDI mapping.
+**[Download X1 × djay Bridge v1.1 for macOS](https://github.com/fizzy2clou/Traktor-Kontrol-X1-MK3-Midi-HID-Bridge-for-Djay-Pro-MacOS-/releases/download/v1.1/X1_djay_Bridge_v1.1_Distribution.zip)** — the currently published ZIP includes the menu-bar application, installer and **X1 MK3 Bridge Two Banks** djay MIDI mapping.
 
-This is an initial **pre-release**. Apple notarization and wider Mac compatibility testing are pending.
+**v1.2 has been tested successfully on the development Mac, but its installable distribution ZIP has not yet been published to GitHub.** The BPM feature described below requires v1.2; downloading v1.1 will not install it. See [v1.2 release notes](docs/V1_2_RELEASE_NOTES.md).
 
 ## Features
 
-- Menu-bar app: **Start**, **Stop**, and adjustable remaining-time warning threshold
-- Five X1 MK3 screens for loops, track information, Neural Mix, and center logo
-- **MENU** switches both decks' FX and hotcue controls between 1–4 and 5–8
-- All **16 djay hotcue colors**, displayed on corresponding X1 LEDs
-- FX LED colors: Bank 1 blue/orange; Bank 2 purple/red
-- Twelve underglow LEDs, following bank colors and blinking color/OFF near track end
-- Countdown-based pause detection, avoiding false blinking when paused
-- djay Pro **X1 MK3 Bridge Two Banks** MIDI mapping packaged with the app distribution
+- **Native macOS menu-bar controls:** Start/Stop, adjustable end-of-track underglow warning, and (in v1.2) an optional BPM display with adjustable timeout.
+- **Five X1 MK3 displays:** deck/loop information, loop size/progress, Neural Mix icons and center djay logo.
+- **New in v1.2 — dual BPM screens:** Turning either tempo knob (CC 40 for Deck 1 or CC 41 for Deck 2) temporarily switches **both loop screens** to BPM, showing each deck's live djay BPM simultaneously. Large white digits on black, centered DECK 1 / DECK 2 at the top and BPM at the bottom. Both return to their usual loop information together after the configured delay.
+- **MENU button banks:** FX and hotcues 1–4 in Bank 1 or 5–8 in Bank 2 on both decks.
+- **16-color hotcue LEDs:** per-slot MIDI color feedback from djay Pro.
+- **Bank-aware lighting:** Bank 1 blue/orange FX and underglow; Bank 2 purple/red. Inactive controls remain dim.
+- **Track-ending warning:** bank-colored underglow flashes color/OFF as remaining time passes the configured threshold while playback advances; pauses stop the flashing.
 
-## Requirements
+## Dual BPM display (v1.2)
 
-- Native Instruments Traktor Kontrol X1 MK3 via USB
-- djay Pro for macOS
-- Apple Silicon Mac (other architectures untested)
-- macOS Accessibility permission for track and loop information
+| Tempo control | Left loop screen | Right loop screen |
+| --- | --- | --- |
+| Turn CC 40 — Deck 1 | Deck 1 current BPM | Deck 2 current BPM |
+| Turn CC 41 — Deck 2 | Deck 1 current BPM | Deck 2 current BPM |
+| Stop turning | Both return to normal loop information after the configured delay | |
 
-## Installation
-
-1. Download and extract `X1_djay_Bridge_v1.1_Distribution.zip` from [Releases](../../releases).
-2. In Terminal, navigate to the extracted `X1 djay Bridge v1.1` folder and run `bash INSTALL.command`.
-3. Open the app in `~/Applications`. Its white X1 icon appears in the menu bar.
-4. In djay's MIDI configuration, select **X1 MK3 Bridge Two Banks** for the X1 bridge MIDI ports.
-5. Set the desired warning threshold in the menu-bar controls.
-
-See [Installation](docs/INSTALLATION.md) and [Troubleshooting](docs/SETUP_AND_TROUBLESHOOTING.md).
+Enable **Show BPM while adjusting tempo** in the menu-bar application. Adjust the **BPM screen duration** (1–10 seconds, default 2 seconds). BPM values are read from djay Pro via macOS Accessibility, not calculated from the MIDI CC position.
 
 ## Bank controls
 
-| Control | Bank 1 | Bank 2 (MENU) |
+| Physical controls | Bank 1 (default) | Bank 2 (MENU) |
 | --- | --- | --- |
-| Left FX | FX 1–4 (blue) | FX 5–8 (purple) |
-| Right FX | FX 1–4 (orange) | FX 5–8 (red) |
+| Left FX | Deck 1 FX 1–4, blue | Deck 1 FX 5–8, purple |
+| Right FX | Deck 2 FX 1–4, orange | Deck 2 FX 5–8, red |
 | Left hotcues | Cues 1–4 | Cues 5–8 |
 | Right hotcues | Cues 1–4 | Cues 5–8 |
-| Underglow | Blue/orange | Purple/red |
+| Underglow | Blue / orange | Purple / red |
 
-Read the [User Guide](docs/USER_GUIDE.md).
+## Requirements
 
-## Compatibility and security
+- Native Instruments **Traktor Kontrol X1 MK3** connected over USB
+- **djay Pro** for macOS
+- **Apple Silicon Mac** (other architectures untested)
+- macOS Accessibility permission for track, loop and BPM information
 
-This first release is not Developer ID notarized; macOS may request explicit first-run approval in **System Settings → Privacy & Security**. Do not disable Gatekeeper globally. Close Traktor and other bridge instances before connecting the X1.
+## Installation
 
-## Source and licensing
+For the **currently published v1.1**, download the ZIP above, extract it, and run `bash INSTALL.command` from the extracted `X1 djay Bridge v1.1` folder. Find the app under `~/Applications`, select **X1 MK3 Bridge Two Banks** in djay's MIDI preferences, and start the bridge from its white X1 menu-bar icon.
 
-This repository initially contains documentation only. The tested Rust source tree has **not** yet been uploaded. The packaged macOS application **is available in the v1.1 GitHub Release**. A license has not been selected, so no open-source reuse rights are granted by default. Review third-party dependencies, branding, and redistribution rights before publishing binaries/source.
+**Do not use v1.1 installation instructions as a v1.2 upgrade procedure.** The v1.2 distribution and installation instructions will be added when the tested v1.2 app is packaged. See [installation guide](docs/INSTALLATION.md).
 
 ## Documentation
 
-- [Installation](docs/INSTALLATION.md)
-- [User Guide](docs/USER_GUIDE.md)
+- [User guide (v1.2 behavior)](docs/USER_GUIDE.md)
+- [v1.2 release notes](docs/V1_2_RELEASE_NOTES.md)
+- [Installation and version status](docs/INSTALLATION.md)
 - [Setup and troubleshooting](docs/SETUP_AND_TROUBLESHOOTING.md)
 - [Release checklist](docs/RELEASE_CHECKLIST.md)
+
+## Security, source and licensing
+
+The published v1.1 app is not Developer ID notarized and may require explicit first-run approval through macOS Privacy & Security. Do not disable Gatekeeper globally. Close Traktor and competing bridge instances before use.
+
+The current Rust source tree has not yet been published in this repository. No open-source license has been selected. Review dependency and trademark redistribution rights before republishing binaries or source.
